@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+cd outfit-transformer
 # Download and install Miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda3
@@ -16,7 +17,7 @@ conda activate outfit-transformer
 conda env update -f environment.yml
 
 # Install unzip using apt and gdown using pip
-sudo apt update && sudo apt install unzip -y
+apt update && apt install unzip -y
 pip install gdown
 
 # Download and extract the polyvore dataset
