@@ -40,11 +40,12 @@ POLYVORE_TASK_DATA_PATH = (
 POLYVORE_IMAGE_DATA_PATH = (
     "{dataset_dir}/images/{item_id}.jpg"
 )
+#@with open(metadata_path, encoding='utf-8') as f:
 
 def load_metadata(dataset_dir):
     metadata = {}
     with open(
-        POLYVORE_METADATA_PATH.format(dataset_dir=dataset_dir), 'r'
+        POLYVORE_METADATA_PATH.format(dataset_dir=dataset_dir), encoding='utf-8'
     ) as f:
         metadata_ = json.load(f)
         for item in metadata_:

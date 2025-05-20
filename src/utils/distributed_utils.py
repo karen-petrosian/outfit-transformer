@@ -31,7 +31,7 @@ def setup(
 
     # 작업 그룹 초기화
     dist.init_process_group(
-        backend="nccl", 
+        backend="gloo",
         rank=rank, 
         world_size=world_size
     )

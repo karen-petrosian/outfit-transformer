@@ -33,6 +33,10 @@ Our implementation faithfully reproduces the original paper’s method while int
 
 </div>
 
+## Model weights
+
+Weights are available in this link: [Google Drive](https://drive.google.com/drive/folders/1BAbvU3UuCRo_C1DKS9Z3LfcJvDyez80f?usp=sharing)
+
 ## 🛠️ Installation
 
 ```bash
@@ -57,7 +61,7 @@ rm checkpoints.zip
 
 ## 🏋️ Training & Evaluation
 
-### Step 1: Precompute CILP Embeddings
+### Step 1: Precompute CLIP Embeddings
 Before proceeding with training, make sure to precompute the CLIP embeddings, as all subsequent steps rely on these precomputed features.
 
 ```bash
@@ -75,8 +79,7 @@ python -m src.run.2_train_compatibility \
 
 #### 🎯 Test
 ```bash
-python -m src.run.2_test_compatibility \
---checkpoint $PATH/TO/LOAD/MODEL/.PT/FILE
+python -m src.run.2_test_compatibility --checkpoint $PATH/TO/LOAD/MODEL/.PT/FILE
 ```
 
 ### Step 3: Complementary Item Retrieval
@@ -105,23 +108,10 @@ python -m src.demo.1_generate_rec_embeddings \
 --checkpoint $PATH/OF/MODEL/.PT/FILE
 ```
 
-#### Build Faiss Index.
-```
-python -m src.demo.2_build_index
-```
 
-#### Run Demo
-```
-python -m src.demo.3_run \
---checkpoint $PATH/OF/MODEL/.PT/FILE
-```
+
 
 ## ⚠️ Note
 
 This is a non-official implementation of the Outfit Transformer model. The official repository has not been released yet.
 
-## 📝 License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
-
-If you use this repository, please mention the original GitHub repository by linking to [outfit-transformer](https://github.com/owj0421/outfit-transformer). This helps support the project and acknowledges the contributors.
