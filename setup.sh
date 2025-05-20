@@ -16,7 +16,6 @@ conda activate outfit-transformer
 conda env update -f environment.yml
 
 # Install unzip using apt and gdown using pip
-sudo apt update && sudo apt install unzip -y
 pip install gdown
 
 # Download and extract the polyvore dataset
